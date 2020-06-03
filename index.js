@@ -63,9 +63,7 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.info
       : "null";
   
-  var speechResponse;
-  
-  speechResponse = {
+  var speechResponse = {
     google: {
       expectUserResponse: true,
       richResponse: {
@@ -78,7 +76,27 @@ restService.post("/echo", function(req, res) {
         ]
       }
     }
-  };
+  };;
+
+
+  if (info == "알려줘" || info == "알려줄래" || info == "어떻게해" || info == "어떻게") {
+    if (CPR == "CPR" || CPR == "심폐소생술") {
+      speechResponse = {
+        google: {
+          expectUserResponse: true,
+          richResponse: {
+            items: [
+              {
+                simpleResponse: {
+                  textToSpeech: "speech"
+                }
+              }
+            ]
+          }
+        }
+      };
+    }
+  }
   
   
   return res.json({
