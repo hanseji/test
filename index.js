@@ -14,12 +14,6 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-  var speech =
-    req.body.queryResult &&
-    req.body.queryResult.parameters &&
-    req.body.queryResult.parameters.echoText
-      ? req.body.queryResult.parameters.echoText
-      : "Seems like some problem. Speak again.";
   
   var pain =
     req.body.queryResult &&
@@ -62,6 +56,13 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult.parameters.info
       ? req.body.queryResult.parameters.info
       : "null";
+
+  var speech =
+  req.body.queryResult &&
+  req.body.queryResult.parameters &&
+  req.body.queryResult.parameters.echoText
+    ? req.body.queryResult.parameters.echoText
+    : "Seems like some problem. Speak again.";
   
   var speechResponse = {
     google: {
@@ -79,8 +80,9 @@ restService.post("/echo", function(req, res) {
   };;
 
 
-  if (info == "알려줘" || info == "알려줄래" || info == "어떻게해" || info == "어떻게") {
-    if (CPR == "CPR" || CPR == "심폐소생술") {
+  if (info == "알려줘") {
+    if (CPR == "심폐소생술") {
+      speech = "speech"
       speechResponse = {
         google: {
           expectUserResponse: true,
