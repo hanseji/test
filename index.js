@@ -84,18 +84,31 @@ restService.post("/echo", function(req, res) {
     if (CPR == "심폐소생술") {
       speech = "speech"
       speechResponse = {
-        google: {
-          expectUserResponse: true,
-          richResponse: {
-            items: [
-              {
-                simpleResponse: {
-                  textToSpeech: "speech"
-                }
+        "google": {
+            "expectUserResponse": true,
+            "richResponse": {
+                "items": [
+                    {
+                        "basicCard": {
+                            "title": "심폐소생술 하는 방법",
+                            "image": {
+                                "url": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+                                "accessibilityText": "Google Logo"
+                            },
+                            "buttons": [
+                                {
+                                    "title": "Button Title",
+                                    "openUrlAction": {
+                                        "url": "https://www.google.com"
+                                    }
+                                }
+                            ],
+                            "imageDisplayOptions": "WHITE"
+                          }
+                      }
+                  ]
               }
-            ]
           }
-        }
       };
     }
   }
