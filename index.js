@@ -82,33 +82,34 @@ restService.post("/echo", function(req, res) {
 
   if (info == "알려줘") {
     if (CPR == "심폐소생술") {
-      speech = "speech"
+      speech = "환자의 가슴 중앙에 깍지낀 손으로 몸과 수직이 되도록 압박합니다. 압박은 성인기준 5cm 이상 1분에 100회 이상의 속도로 압박해줍니다."
       speechResponse = {
         "google": {
-            "expectUserResponse": true,
-            "richResponse": {
-                "items": [
-                    {
-                        "basicCard": {
-                            "title": "심폐소생술 하는 방법",
-                            "image": {
-                                "url": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
-                                "accessibilityText": "Google Logo"
-                            },
-                            "buttons": [
-                                {
-                                    "title": "Button Title",
-                                    "openUrlAction": {
-                                        "url": "https://www.google.com"
-                                    }
-                                }
-                            ],
-                            "imageDisplayOptions": "WHITE"
-                          }
-                      }
-                  ]
+          "expectUserResponse": true,
+          "richResponse": {
+            "items": [
+              {
+                "basicCard": {
+                    "title": "심폐소생술 하는 방법",
+                    "formattedText": "환자의 가슴 중앙에 깍지낀 두손으로 몸과 수직이 되도록 압박한다. 압박은 성인기준 5cm 이상 1분에 100 ~ 120회 이상의 속도로 압박한다.",
+                    "image": {
+                        "url": "https://post-phinf.pstatic.net/MjAxODAyMjNfMjQ2/MDAxNTE5MzU4NzA3NDgy.xPYTDve9z1-1qTo84BVS_IwTL2rWWPY07kv9pmNtmLQg.cF7yMB-r2pK3WIFZd_BthbHJ6gekh8fzZDz_6CkgqUog.JPEG/%EC%8B%AC%ED%8F%90%EC%86%8C%EC%83%9D%EC%88%A0-%EB%A9%94%EC%9D%B8-%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg?type=w1200",
+                        "accessibilityText": "심폐소생술관련 사진"
+                    },
+                    "buttons": [
+                        {
+                            "title": "자세히 알아보기",
+                            "openUrlAction": {
+                                "url": "https://www.e-gen.or.kr/egen/first_aid_basics.do"
+                            }
+                        }
+                    ],
+                  "imageDisplayOptions": "WHITE"
+                }
               }
+            ]
           }
+        }
       };
     }
   }
