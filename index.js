@@ -21,7 +21,51 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
   
-  var speechResponse = {
+  var pain =
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.pain
+      ? req.body.queryResult.parameters.pain
+      : "null";
+  
+  var Paramedics =
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.Paramedics
+      ? req.body.queryResult.parameters.Paramedics
+      : "null";
+  
+  var CPR =
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.CPR
+      ? req.body.queryResult.parameters.CPR
+      : "null";
+  
+  var echoText =
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.echoText
+      ? req.body.queryResult.parameters.echoText
+      : "null";
+  
+  var help =
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.help
+      ? req.body.queryResult.parameters.help
+      : "null";
+  
+  var info =
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.info
+      ? req.body.queryResult.parameters.info
+      : "null";
+  
+  var speechResponse;
+  
+  speechResponse = {
     google: {
       expectUserResponse: true,
       richResponse: {
@@ -35,6 +79,7 @@ restService.post("/echo", function(req, res) {
       }
     }
   };
+  
   
   return res.json({
     payload: speechResponse,
