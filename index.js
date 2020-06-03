@@ -36,13 +36,6 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.CPR
       : "null";
   
-  var echoText =
-    req.body.queryResult &&
-    req.body.queryResult.parameters &&
-    req.body.queryResult.parameters.echoText
-      ? req.body.queryResult.parameters.echoText
-      : "null";
-  
   var help =
     req.body.queryResult &&
     req.body.queryResult.parameters &&
@@ -60,8 +53,8 @@ restService.post("/echo", function(req, res) {
   var speech =
   req.body.queryResult &&
   req.body.queryResult.parameters &&
-  req.body.queryResult.parameters.echoText
-    ? req.body.queryResult.parameters.echoText
+  req.body.queryResult.parameters.info
+    ? req.body.queryResult.parameters.info
     : "Seems like some problem. Speak again.";
   
   var speechResponse = {
