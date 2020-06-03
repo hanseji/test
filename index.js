@@ -55,7 +55,7 @@ restService.post("/echo", function(req, res) {
   req.body.queryResult.parameters &&
   req.body.queryResult.parameters.info
     ? req.body.queryResult.parameters.info
-    : "Seems like some problem. Speak again.";
+    : "error";
   
   var speechResponse = {
     google: {
@@ -145,6 +145,11 @@ restService.post("/echo", function(req, res) {
           }
         }
       };
+    }
+  }
+  else if (help == "도와줘") {
+    if (CPR == "심폐소생술") {
+
     }
   }
   
