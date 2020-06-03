@@ -89,9 +89,14 @@ restService.post("/echo", function(req, res) {
           "richResponse": {
             "items": [
               {
+                "simpleResponse": {
+                  "textToSpeech": "환자의 가슴 중앙에 깍지낀 두손으로 몸과 수직이 되도록 압박합니다. 압박은 성인기준 5cm 이상 1분에 100 ~ 120회 이상의 속도로 압박합니다."
+                }
+              },
+              {
                 "basicCard": {
                     "title": "심폐소생술 하는 방법",
-                    "formattedText": "환자의 가슴 중앙에 깍지낀 두손으로 몸과 수직이 되도록 압박한다. 압박은 성인기준 5cm 이상 1분에 100 ~ 120회 이상의 속도로 압박한다.",
+                    "formattedText": "환자의 가슴 중앙에 깍지낀 두손으로 몸과 수직이 되도록 압박합니다. 압박은 성인기준 5cm 이상 1분에 100 ~ 120회 이상의 속도로 압박합니다.",
                     "image": {
                         "url": "https://post-phinf.pstatic.net/MjAxODAyMjNfMjQ2/MDAxNTE5MzU4NzA3NDgy.xPYTDve9z1-1qTo84BVS_IwTL2rWWPY07kv9pmNtmLQg.cF7yMB-r2pK3WIFZd_BthbHJ6gekh8fzZDz_6CkgqUog.JPEG/%EC%8B%AC%ED%8F%90%EC%86%8C%EC%83%9D%EC%88%A0-%EB%A9%94%EC%9D%B8-%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg?type=w1200",
                         "accessibilityText": "심폐소생술관련 사진"
