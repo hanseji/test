@@ -149,7 +149,39 @@ restService.post("/echo", function(req, res) {
   }
   else if (help == "도와줘") {
     if (CPR == "심폐소생술") {
-
+      speechResponse = {
+        "google": {
+          "expectUserResponse": true,
+          "richResponse": {
+            "items": [
+              {
+                "simpleResponse": {
+                  "textToSpeech": '<audio src="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg">a digital watch alarm</audio>'
+                }
+              },
+              {
+                "basicCard": {
+                    "title": "심폐소생술 하는 방법",
+                    "formattedText": "화상 부위를 찬물에 20분 이상 담가 열기를 식혀준다. 물집은 절대 터뜨리지 말고 시계, 반지, 목걸이 등의 장신구는 피부가 부어오르기 전에 최대한 빨리 제거한다. 그리고, 화상 부위에 바세린이나 화상 거즈(깨끗한 거즈)로 덮어주고 붕대로 감아준다.",
+                    "image": {
+                        "url": "https://www.e-gen.or.kr/images/egen/heat_iced_damage_3_4.gif",
+                        "accessibilityText": "화상 응급 처치 관련 사진"
+                    },
+                    "buttons": [
+                        {
+                            "title": "자세히 알아보기",
+                            "openUrlAction": {
+                                "url": "https://www.e-gen.or.kr/egen/heat_iced_damage.do?contentsno=37"
+                            }
+                        }
+                    ],
+                  "imageDisplayOptions": "WHITE"
+                }
+              }
+            ]
+          }
+        }
+      };
     }
   }
   
