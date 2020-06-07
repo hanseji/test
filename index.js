@@ -156,7 +156,7 @@ restService.post("/echo", function(req, res) {
             "items": [
               {
                 "simpleResponse": {
-                  "textToSpeech": '<audio src="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg">a digital watch alarm</audio>'
+                  "textToSpeech": '<speak><audio src="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg"></audio></speak>'
                 }
               },
               {
